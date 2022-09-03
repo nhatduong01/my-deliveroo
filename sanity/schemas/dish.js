@@ -1,13 +1,13 @@
 export default {
   name: "dish",
-  title: "Dish",
   type: "document",
+  title: "Dish",
   fields: [
     {
       name: "name",
       type: "string",
       title: "Name of dish",
-      validation: (Rule) => Rule.require(),
+      validation: (Rule) => Rule.required().min(0),
     },
     {
       name: "short_description",

@@ -7,7 +7,7 @@ export default {
       name: "name",
       type: "string",
       title: "Restaurant name",
-      validation: (Rule) => Rule.require(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "short_description",
@@ -29,14 +29,14 @@ export default {
       name: "address",
       type: "string",
       title: "Restaurant address",
-      validation: (Rule) => Rule.require(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "rating",
       type: "number",
       title: "Enter a Rating from (1-5 stars)",
       validation: (Rule) =>
-        Rule.require()
+        Rule.required()
           .min(1)
           .max(5)
           .error("Please enter a valid Number from 1 to 5"),
@@ -44,7 +44,7 @@ export default {
     {
       name: "type",
       title: "Category",
-      validation: (Rule) => Rule.require(),
+      validation: (Rule) => Rule.required(),
       type: "reference",
       to: [{ type: "category" }],
     },
