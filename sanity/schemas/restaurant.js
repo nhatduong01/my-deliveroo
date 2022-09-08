@@ -54,5 +54,10 @@ export default {
       title: "Dishes",
       of: [{ type: "reference", to: [{ type: "dish" }] }],
     },
+    {
+      name: "image",
+      type: "image",
+      title: "Image",
+    },
   ],
 };
