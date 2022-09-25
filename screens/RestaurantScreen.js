@@ -51,7 +51,8 @@ const RestaurantScreen = () => {
         dishes,
       })
     );
-  }, [dispatch]);
+  }, []);
+  //
   return (
     <>
       <BasketIcon />
