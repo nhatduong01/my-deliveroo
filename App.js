@@ -10,6 +10,8 @@ import { store } from "./store";
 import BasketScreen from "./screens/BasketScreen";
 import PreparingOrderScreen from "./screens/PreparingOrderScreen";
 import Delivery from "./screens/Delivery";
+import LoginScreen from "./screens/LoginScreen";
+import RegisterScreen from "./screens/RegisterScreen";
 
 const stack = createNativeStackNavigator();
 
@@ -20,6 +22,16 @@ export default function App() {
         <TailwindProvider>
           <stack.Navigator>
             <stack.Screen name="Home" component={HomeScreen} />
+            <stack.Screen
+              name="Login"
+              component={LoginScreen}
+              options={{ presentation: "fullScreenModal", headerShown: false }}
+            />
+            <stack.Screen
+              name="Register"
+              component={RegisterScreen}
+              options={{ presentation: "fullScreenModal", headerShown: false }}
+            />
             <stack.Screen name="Restaurant" component={RestaurantScreen} />
             <stack.Screen
               name="basket"

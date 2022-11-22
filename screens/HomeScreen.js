@@ -5,6 +5,7 @@ import {
   Image,
   TextInput,
   ScrollView,
+  TouchableOpacity,
 } from "react-native";
 import React, { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
@@ -62,7 +63,13 @@ const HomeScreen = () => {
             <ChevronDownIcon size={20} color="#00CCBB" />
           </Text>
         </View>
-        <UserIcon size={35} color="#00CCBB" />
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("Login");
+          }}
+        >
+          <UserIcon size={35} color="#00CCBB" />
+        </TouchableOpacity>
       </View>
       {/* Search */}
       <View className="flex-row items-center space-x-2 pb-2 mx-4 ">
