@@ -1,3 +1,4 @@
+import "react-native-gesture-handler";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { TailwindProvider } from "tailwindcss-react-native";
@@ -12,8 +13,11 @@ import PreparingOrderScreen from "./screens/PreparingOrderScreen";
 import Delivery from "./screens/Delivery";
 import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import PaymentScreen from "./screens/PaymentScreen";
 
 const stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
@@ -46,6 +50,11 @@ export default function App() {
             <stack.Screen
               name="Delivery"
               component={Delivery}
+              options={{ presentation: "fullScreenModal", headerShown: false }}
+            />
+            <stack.Screen
+              name="Payment"
+              component={PaymentScreen}
               options={{ presentation: "fullScreenModal", headerShown: false }}
             />
           </stack.Navigator>

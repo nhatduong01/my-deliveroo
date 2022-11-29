@@ -11,6 +11,6 @@ npm-debug.*
 web-build/
 .vscode/
 .prettierignore
-
+.env
 # macOS
 .DS_Store

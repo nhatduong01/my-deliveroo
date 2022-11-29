@@ -20,6 +20,8 @@ import {
 import Categories from "../components/Categories";
 import FeatureRow from "../components/FeatureRow";
 import sanityClient from "../sanity";
+import { auth } from "../firebaseConfig";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 
 const HomeScreen = () => {
   const [featuredCategories, setfeaturedCategories] = useState([]);
@@ -65,6 +67,21 @@ const HomeScreen = () => {
         </View>
         <TouchableOpacity
           onPress={() => {
+            // onAuthStateChanged(auth, (user) => {
+            //   if (user) {
+            //     // User is signed in, see docs for a list of available properties
+            //     // https://firebase.google.com/docs/reference/js/firebase.User
+            //     // signOut(auth)
+            //     //   .then(() => {
+            //     //     console.log("Sign out successful");
+            //     //   })
+            //     //   .catch((error) => {
+            //     //     // An error happened.
+            //     //   });
+            //   } else {
+            //     navigation.navigate("Login");
+            //   }
+            // });
             navigation.navigate("Login");
           }}
         >
