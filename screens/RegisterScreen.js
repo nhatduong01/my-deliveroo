@@ -28,6 +28,7 @@ const RegisterScreen = ({ navigation }) => {
         className="w-3/4 h-12  mt-10 rounded-md border p-3"
         keyboardType="email-address"
         value={email}
+        autoCapitalize="none"
         onChangeText={onChangeEmail}
       />
       <TextInput
@@ -64,6 +65,15 @@ const RegisterScreen = ({ navigation }) => {
       >
         <Text className="text-lg font-bold text-white text-center">
           Register
+        </Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("Home");
+        }}
+      >
+        <Text className="text-center text-base font-bold text-[#00CCBB] mt-4">
+          Continue as Annonymous
         </Text>
       </TouchableOpacity>
     </SafeAreaView>

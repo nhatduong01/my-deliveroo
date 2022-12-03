@@ -1,15 +1,16 @@
 import express from "express";
-import Stripe from "stripe";
-require("dotenv").config();
+import dotenv from "dotenv";
+// import Stripe from "stripe";
 
+dotenv.config();
 const app = express();
 
 const port = 3301;
 
-const PUBLISHABLE_KEY = process.env.STRIPE_PUBLIC_KEY;
-const PRIVATE_KEY = process.env.STRIPE_SECRET_KEY;
+// const PUBLISHABLE_KEY = process.env.STRIPE_PUBLIC_KEY;
+// const PRIVATE_KEY = process.env.STRIPE_SECRET_KEY;
 
-const stripe = Stripe(PRIVATE_KEY, { apiVersion: "2022-11-15" });
+// const stripe = Stripe(PRIVATE_KEY, { apiVersion: "2022-11-15" });
 app.listen(port, () => {
   console.log("Listening on port", port);
 });

@@ -13,53 +13,70 @@ import PreparingOrderScreen from "./screens/PreparingOrderScreen";
 import Delivery from "./screens/Delivery";
 import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
-import { createDrawerNavigator } from "@react-navigation/drawer";
 import PaymentScreen from "./screens/PaymentScreen";
+import { StripeProvider } from "@stripe/stripe-react-native";
+import { STRIPE_PUBLIC_KEY } from "@env";
 
 const stack = createNativeStackNavigator();
-const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Provider store={store}>
-        <TailwindProvider>
-          <stack.Navigator>
-            <stack.Screen name="Home" component={HomeScreen} />
-            <stack.Screen
-              name="Login"
-              component={LoginScreen}
-              options={{ presentation: "fullScreenModal", headerShown: false }}
-            />
-            <stack.Screen
-              name="Register"
-              component={RegisterScreen}
-              options={{ presentation: "fullScreenModal", headerShown: false }}
-            />
-            <stack.Screen name="Restaurant" component={RestaurantScreen} />
-            <stack.Screen
-              name="basket"
-              component={BasketScreen}
-              options={{ presentation: "modal", headerShown: false }}
-            />
-            <stack.Screen
-              name="PreparingOrder"
-              component={PreparingOrderScreen}
-              options={{ presentation: "fullScreenModal", headerShown: false }}
-            />
-            <stack.Screen
-              name="Delivery"
-              component={Delivery}
-              options={{ presentation: "fullScreenModal", headerShown: false }}
-            />
-            <stack.Screen
-              name="Payment"
-              component={PaymentScreen}
-              options={{ presentation: "fullScreenModal", headerShown: false }}
-            />
-          </stack.Navigator>
-        </TailwindProvider>
-      </Provider>
+      <StripeProvider publishableKey={STRIPE_PUBLIC_KEY}>
+        <Provider store={store}>
+          <TailwindProvider>
+            <stack.Navigator>
+              <stack.Screen name="Home" component={HomeScreen} />
+              <stack.Screen
+                name="Login"
+                component={LoginScreen}
+                options={{
+                  presentation: "fullScreenModal",
+                  headerShown: false,
+                }}
+              />
+              <stack.Screen
+                name="Register"
+                component={RegisterScreen}
+                options={{
+                  presentation: "fullScreenModal",
+                  headerShown: false,
+                }}
+              />
+              <stack.Screen name="Restaurant" component={RestaurantScreen} />
+              <stack.Screen
+                name="basket"
+                component={BasketScreen}
+                options={{ presentation: "modal", headerShown: false }}
+              />
+              <stack.Screen
+                name="PreparingOrder"
+                component={PreparingOrderScreen}
+                options={{
+                  presentation: "fullScreenModal",
+                  headerShown: false,
+                }}
+              />
+              <stack.Screen
+                name="Delivery"
+                component={Delivery}
+                options={{
+                  presentation: "fullScreenModal",
+                  headerShown: false,
+                }}
+              />
+              <stack.Screen
+                name="Payment"
+                component={PaymentScreen}
+                options={{
+                  presentation: "fullScreenModal",
+                  headerShown: false,
+                }}
+              />
+            </stack.Navigator>
+          </TailwindProvider>
+        </Provider>
+      </StripeProvider>
     </NavigationContainer>
   );
 }

@@ -62,7 +62,7 @@ const HomeScreen = () => {
           <Text className="font-bond text-gray-400 text-xs">Deliver Now!</Text>
           <Text className="font-bond text-xl">
             Current Location
-            <ChevronDownIcon size={20} color="#00CCBB" />
+            <ChevronDownIcon size={20} color="#00CCBB" className="ml-5" />
           </Text>
         </View>
         <TouchableOpacity
